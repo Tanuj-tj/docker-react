@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker 
+
+defore_install:
+  - docekr build -t tanuj/docker-react - f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true tanuj/docker-react npm run test
